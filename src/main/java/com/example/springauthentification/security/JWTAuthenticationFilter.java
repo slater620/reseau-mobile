@@ -63,5 +63,6 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
                 new Date(System.currentTimeMillis() + EXPIRATION_TIME)) // JWT token validity time
             .sign(Algorithm.HMAC512(SECRET.getBytes())); // JWT Signature
     response.addHeader(HEADER_STRING, TOKEN_PREFIX + token);
+    System.out.println(token);
   }
 }

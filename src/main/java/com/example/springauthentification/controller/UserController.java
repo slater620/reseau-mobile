@@ -14,7 +14,7 @@ import java.util.Map;
 
 
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/mobile/api")
 public class UserController {
 
   @Autowired
@@ -40,10 +40,6 @@ public class UserController {
    * @return the users by id
    * @throws ResourceNotFoundException the resource not found exception
    */
-  @GetMapping("/")
-	public String helloWorld() {
-		return "Hello Word";
-	}
   
   @GetMapping("/users/{id}")
   public ResponseEntity<User> getUsersById(@PathVariable(value = "id") Long userId)

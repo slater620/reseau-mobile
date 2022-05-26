@@ -12,7 +12,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 
 @Entity
-@Table(name="test")
+@Table(name="users")
 @Data
 @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
 @AllArgsConstructor
@@ -21,7 +21,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @EntityListeners(AuditingEntityListener.class)
 
 
-public abstract class User {
+public class User {
     public Integer getId() {
 		return id;
 	}

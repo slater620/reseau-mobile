@@ -10,7 +10,10 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 
 
+import javax.persistence.*;
+
 @Entity
+@Table
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

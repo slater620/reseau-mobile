@@ -20,7 +20,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 @EnableWebSecurity
 public class WebSecurity extends WebSecurityConfigurerAdapter {
 
-  public static final String SIGN_UP_URL = "/api/v1/users";
+  public static final String SIGN_UP_URL = "/mobile/api/users";
 
   @Autowired private UserDetailServiceImpl userDetailService;
 
@@ -52,7 +52,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
             new AuthorizationFilter(authenticationManager())) // Add JWT Authorization Filter
         .sessionManagement()
         .sessionCreationPolicy(
-            SessionCreationPolicy.STATELESS); // this disables session creation on Spring Security
+            SessionCreationPolicy.STATELESS); // this disables session crea&tion on Spring Security
   }
 
   @Bean
@@ -68,7 +68,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 
   public JWTAuthenticationFilter getJWTAuthenticationFilter() throws Exception {
     final JWTAuthenticationFilter filter = new JWTAuthenticationFilter(authenticationManager());
-    filter.setFilterProcessesUrl("/api/v1/auth/login"); // override the default spring login url
+    filter.setFilterProcessesUrl("/mobile/auth/login"); // override the default spring login url
     return filter;
   }
 }

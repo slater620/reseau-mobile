@@ -109,14 +109,6 @@
         			<artifactId>heroku-maven-plugin</artifactId>
         			<version>3.0.3</version>
       			</plugin>
-			<configuration>
-				    <excludes>
-					<exclude>
-					    <groupId>org.projectlombok</groupId>
-					    <artifactId>lombok</artifactId>
-					</exclude>
-				    </excludes>
-                	</configuration>
 		</plugins>
 	</build>
 

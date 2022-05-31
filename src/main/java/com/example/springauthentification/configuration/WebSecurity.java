@@ -22,18 +22,19 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 
   public static final String SIGN_UP_URL = "/mobile/api/users";
 
-  @Autowired private UserDetailServiceImpl userDetailService;
+  private UserDetailServiceImpl userDetailService;
 
-  @Autowired private BCryptPasswordEncoder bCryptPasswordEncoder;
+  private BCryptPasswordEncoder bCryptPasswordEncoder;
+
+
   @Bean
-	public BCryptPasswordEncoder bCryptPasswordEncoder() {
-		return new BCryptPasswordEncoder();
-	}
-
-  public WebSecurity(
-      UserDetailServiceImpl userDetailService) {
-    this.userDetailService = userDetailService;
+  public BCryptPasswordEncoder passwordEncoder() {
+      return new BCryptPasswordEncoder();
   }
+  
+  public WebSecurity(UserDetailServiceImpl userDetailsService) {
+    this.userDetailService = userDetailsService;
+}
 
   @Override
   protected void configure(HttpSecurity http) throws Exception {

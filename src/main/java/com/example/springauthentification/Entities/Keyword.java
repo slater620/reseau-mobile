@@ -1,20 +1,10 @@
 package com.example.springauthentification.Entities;
 
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
-
-
 import javax.persistence.*;
 
 @Entity
 @Table
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@ToString
+
 public class Keyword {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
@@ -22,6 +12,48 @@ public class Keyword {
     @Column(name="word")
     private String word;
     @Column(name = "description")
+
+    public Integer getId() {
+        return this.id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getWord() {
+        return this.word;
+    }
+
+    public void setWord(String word) {
+        this.word = word;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+            " id='" + getId() + "'" +
+            ", word='" + getWord() + "'" +
+            ", description='" + getDescription() + "'" +
+            ", user='" + getUser() + "'" +
+            "}";
+    }
+
+    public User getUser() {
+        return this.user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
     private String description;
     @ManyToOne
     @JoinColumn(name = "user_id", updatable = false)

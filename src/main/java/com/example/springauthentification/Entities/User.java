@@ -1,9 +1,5 @@
 package com.example.springauthentification.Entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
 import javax.persistence.*;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
@@ -13,11 +9,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @Entity
 @Table(name="users")
-@Data
 @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
-@AllArgsConstructor
-@NoArgsConstructor
-@ToString
 @EntityListeners(AuditingEntityListener.class)
 
 
